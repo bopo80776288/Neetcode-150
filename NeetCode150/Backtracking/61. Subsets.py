@@ -12,11 +12,11 @@ class Solution:
             # include
             subset.append(nums[i])
             dfs(i + 1)
-
-            # not include 
             subset.pop()
+            
+            # not include 
             dfs(i + 1)
-
+    
         dfs(0)
         return res
 

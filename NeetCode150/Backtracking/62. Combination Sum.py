@@ -14,9 +14,9 @@ class Solution:
             # include number
             cur.append(nums[i])
             dfs(i, cur, total + nums[i])
+            cur.pop()
             
             # not include number 
-            cur.pop()
             dfs(i + 1, cur, total)
         
         dfs(0, [], 0)
