@@ -16,11 +16,11 @@ class Solution:
             backtracking(i + 1, subset)
             subset.pop()
 
-            # don't pick
-            
             # check if there is duplicate
             while i + 1 < len(nums) and nums[i] == nums[i + 1]:
                 i += 1 
+            
+            # don't pick
             backtracking(i + 1, subset)
         
         backtracking(0, [])
