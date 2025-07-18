@@ -12,7 +12,7 @@ class Solution:
             for c in str:
                 count[ord(c) - ord('a')] += 1 
             wordhash[tuple(count)].append(str)
-        return wordhash.values()
+        return list(wordhash.values())
     
         # defaultdict(list): Avoids manual initialization of lists.
         # tuple(count): Converts the mutable list to an immutable, hashable key.
