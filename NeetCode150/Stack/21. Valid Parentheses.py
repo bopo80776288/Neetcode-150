@@ -9,15 +9,17 @@ class Solution:
         for c in s:
             # checking if it is a close
             # when we use if x in dict, we are checking if there is a key named x, not the value
-            if c in table:
+            # if not a close, append to stack 
+            if c not in table:
+                stack.append(c)
+                
+            elif c in table:
                 # checking if the stack is empty and the last open item in the stack matches the close 
                 if stack and stack[-1] == table[c]:
                     stack.pop()
                 else:
                     return False
-            # if not a close, append to stack 
-            else:
-                stack.append(c)
+            
         
         return not stack 
     
