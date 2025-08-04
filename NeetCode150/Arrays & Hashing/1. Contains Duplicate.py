@@ -2,14 +2,14 @@ from typing import List
 class Solution:
     def hasDuplicate(self, nums: List[int]) -> bool:
         # setup a empty list to store value that appears
-        numslist = []
+        numslist = set()
         # run through the nums input, if seen num in numslist, return True
         # otherwise append the num to numslist
         # eventaully after run through the nums input we could know if there are duplicates 
         for num in nums:
             if num in numslist:
                 return True
-            numslist.append(num)
+            numslist.add(num)
         return False 
 
 # Test cases
