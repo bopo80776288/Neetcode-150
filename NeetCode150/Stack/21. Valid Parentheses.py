@@ -5,24 +5,15 @@ class Solution:
         # link the close character to the open for later check 
         table = {")":"(" , "}":"{", "]":"["}
 
-
         for c in s:
-            # checking if it is a close
-            # when we use if x in dict, we are checking if there is a key named x, not the value
-            # if not a close, append to stack 
             if c not in table:
                 stack.append(c)
-                
-            elif c in table:
-                # checking if the stack is empty and the last open item in the stack matches the close 
-                if stack and stack[-1] == table[c]:
-                    stack.pop()
-                else:
+            else:
+                if not stack or stack[-1] != table[c]:
                     return False
-            
+                stack.pop()
         
-        return not stack 
-    
+        return not stack
 # Test cases
 solution = Solution()
 
